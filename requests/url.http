@@ -1,6 +1,10 @@
+### POST Create new short url
 POST http://localhost:5000/shorten
 Content-Type: application/json
 
 {
-	"longUrl": "https://www.youtube.com/watch?v=ye4l7_OpJM0&feature=youtu.be&list=WL&t=15247"
+	"longUrl": "http://www.sennheiser.com.pl/sluchawki-domowe-i-hifi-sennheiser.html"
 }
+
+### GET original url
+GET http://localhost:5000/zO-EoJ3WW
