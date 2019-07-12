@@ -8,11 +8,11 @@ connectDB();
 
 //Middleware
 app.use(express.json({ extended: false }));
-app.use('/', require('./middleware/apiLimiter'));
+app.use('/api/', require('./middleware/apiLimiter'));
 
 //Routes
-app.use('/', require('./routes/shorten'));
-app.use('/', require('./routes/index'));
+app.use('/api/', require('./routes/shorten'));
+app.use('/api/', require('./routes/index'));
 
 const PORT = process.env.PORT | 5000;
 

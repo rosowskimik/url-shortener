@@ -7,7 +7,7 @@ const shortenLimiter = require('../middleware/shortenLimiter');
 
 const Url = require('../models/Url');
 
-// @route						POST /shorten
+// @route						POST /api/shorten
 // @desc						Create short url
 router.post('/shorten', shortenLimiter, async (req, res) => {
   const { longUrl } = req.body;
