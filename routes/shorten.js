@@ -23,7 +23,7 @@ router.post('/shorten', shortenLimiter, async (req, res) => {
         res.json(url);
       } else {
         const urlCode = shortId.generate(longUrl);
-        const shortUrl = `${baseUrl}/${urlCode}`;
+        const shortUrl = `${baseUrl}/api/${urlCode}`;
 
         url = new Url({
           shortUrl,

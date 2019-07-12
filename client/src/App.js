@@ -1,11 +1,16 @@
-import React from 'react';
-import './App.css';
+import React, { Fragment } from 'react';
+import './App.scss';
+
+import Main from './components/Main';
+import LatestList from './components/LatestList';
 
 const App = () => {
   return (
-    <div className='App'>
-      <h1>Hello</h1>
-    </div>
+    <Fragment>
+      <h1 className='header'>URL Shortener</h1>
+      <Main />
+      <LatestList />
+    </Fragment>
   );
 };
 
