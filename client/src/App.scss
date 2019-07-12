@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
+
+//variables
+$primary: #3f51b5;
+$gray: #999;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul > li {
+  list-style: none;
+}
+
+#root {
+  width: 80%;
+  margin: 10vh auto 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4rem;
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 10vh;
+}
+
+input[type='text'] {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid $gray;
+  outline: none;
+  padding: 7px 1px;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  transition: border 0.2s linear, box-shadow 0.2s linear;
+  -webkit-font-smoothing: antialiased;
+
+  &:focus {
+    border-bottom: 1px solid $primary;
+    box-shadow: 0 1px 0 0 $primary;
+  }
+
+  &:disabled {
+    background: transparent;
+    color: $gray;
+    border-style: dotted;
+    width: calc(100% - 2rem);
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 21px;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: px;
+  background: $primary;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s linear;
+
+  &.btn-block {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  &:hover {
+    background: darken($primary, 5);
+  }
+}
+
+ul {
+  position: relative;
+  border: 1px solid $gray;
+  border-radius: 1px;
+  margin-top: 5vh;
+  overflow: hidden;
+
+  .list-head {
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px 21px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  li:not(:first-child) {
+    border-top: 1px solid $gray;
+    padding: 9px 15px;
+
+    a {
+      font-size: 0.8rem;
+      color: darken($primary, 3);
+    }
+
+    .long-url {
+      display: inline-block;
+      width: 58%;
+      max-width: 58%;
+      max-height: 1.2rem;
+      overflow: hidden;
+      margin-right: 2%;
+    }
+    .short-url {
+      font-size: 0.8rem;
+      display: inline-block;
+      max-width: 40%;
+      a {
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 9px 15px;
+  }
+
+  li:not(:first-child) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .btn {
+    padding: 7px 12px;
+  }
+}
