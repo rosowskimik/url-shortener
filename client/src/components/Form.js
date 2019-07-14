@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import { useStoreState, useStoreActions } from 'easy-peasy';
 
@@ -25,9 +26,13 @@ const Form = () => {
       <div className='input-group'>
         <input type='text' value={shortUrl} disabled />
         <span className='secondary-content'>
-          <button className={`btn ${shortUrl.length === 0 && 'btn-inactive'}`}>
-            <i className='far fa-copy' />
-          </button>
+          <CopyToClipboard text={shortUrl}>
+            <button
+              className={`btn ${shortUrl.length === 0 && 'btn-inactive'}`}
+            >
+              <i className='far fa-copy' />
+            </button>
+          </CopyToClipboard>
           <a
             href={shortUrl}
             className={`btn ${shortUrl.length === 0 && 'btn-inactive'}`}
