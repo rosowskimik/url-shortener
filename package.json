@@ -1,8 +1,8 @@
 {
   "name": "url-shortener-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Url shortener",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
