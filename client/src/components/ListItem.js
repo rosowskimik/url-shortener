@@ -12,7 +12,7 @@ const ListItem = ({ shortUrl, longUrl }) => {
       <span className='short-url'>
         shortened to:{' '}
         <a href={shortUrl} target='_blank' rel='noopener noreferrer'>
-          {shortUrl}
+          {shortUrl.slice(7)}
         </a>
       </span>
     </li>
