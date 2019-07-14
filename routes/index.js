@@ -23,10 +23,10 @@ router.get('/', async (req, res) => {
 router.get('/:code', async (req, res) => {
   try {
     const url = await Url.findOne({ urlCode: req.params.code }).select(
-      '-__v -date'
+      'longUrl'
     );
     if (url) {
-      res.json(url);
+      res.redirect(url.longUrl);
     } else {
       res.status(404).json('Incorrect code');
     }

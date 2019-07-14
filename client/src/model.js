@@ -8,16 +8,19 @@ export default {
 
   //THUNKS
   fetchLatest: thunk(async actions => {
-    const res = await axios.get('/api');
-    actions.setLatest(res.data);
+    try {
+      const res = await axios.get('/api');
+      actions.setLatest(res.data);
+    } catch (err) {}
   }),
   shorten: thunk(async (actions, longUrl) => {
-    const res = await axios.post('/api/shorten', longUrl, {
-      headers: {
-        'Content-type': 'application/json'
-      }
-    });
-    actions.addShort(res.data);
+    const config = {
+      headers: { 'Content-type': 'application/json' }
+    };
+    try {
+      const res = await axios.post('/api/shorten', { longUrl }, config);
+      actions.addShort(res.data.shortUrl);
+    } catch (err) {}
   }),
 
   //ACTIONS

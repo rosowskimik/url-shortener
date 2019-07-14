@@ -88,6 +88,10 @@ input[type='text'] {
         color: darken($gray, 10);
         background: darken(#e9e9e9, 10);
       }
+
+      &.btn-inactive {
+        pointer-events: none;
+      }
     }
   }
 }
@@ -182,5 +186,9 @@ ul {
 
   .btn {
     padding: 7px 12px;
+  }
+
+  input[type='text'] {
+    font-size: 1rem;
   }
 }
