@@ -3,6 +3,7 @@
 //variables
 $primary: #3f51b5;
 $gray: #999;
+$red: rgb(255, 72, 72);
 
 * {
   padding: 0;
@@ -93,6 +94,25 @@ input[type='text'] {
         pointer-events: none;
       }
     }
+  }
+}
+
+.alert {
+  &-show {
+    position: relative;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.22rem;
+    top: -2.5vh;
+    width: 100%;
+    background: $red;
+    color: #fff;
+    border: 2px solid darken($red, 20);
+    display: block;
+    text-align: center;
+  }
+
+  &-hide {
+    display: none;
   }
 }
 

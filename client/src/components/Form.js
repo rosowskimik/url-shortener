@@ -24,7 +24,7 @@ const Form = () => {
         placeholder='Your link...'
       />
       <div className='input-group'>
-        <input type='text' value={shortUrl.slice(7)} disabled />
+        <input type='text' value={shortUrl} disabled />
         <span className='secondary-content'>
           <CopyToClipboard text={shortUrl}>
             <button

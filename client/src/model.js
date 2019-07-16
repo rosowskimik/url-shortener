@@ -5,6 +5,7 @@ export default {
   //STATE
   shortUrl: '',
   latestUrls: [],
+  alert: null,
 
   //THUNKS
   fetchLatest: thunk(async actions => {
@@ -20,7 +21,10 @@ export default {
     try {
       const res = await axios.post('/api/shorten', { longUrl }, config);
       actions.addShort(res.data.shortUrl);
-    } catch (err) {}
+    } catch (err) {
+      actions.setAlert(err.response.data);
+      setTimeout(actions.clearAlert, 2500);
+    }
   }),
 
   //ACTIONS
@@ -29,5 +33,11 @@ export default {
   }),
   addShort: action((state, newUrl) => {
     state.shortUrl = newUrl;
+  }),
+  setAlert: action((state, message) => {
+    state.alert = message;
+  }),
+  clearAlert: action(state => {
+    state.alert = null;
   })
 };
